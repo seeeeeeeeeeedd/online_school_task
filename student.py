@@ -16,6 +16,9 @@ class Student(User):
         else:
             return False
 
+    def get_courses(self) -> list[str]:
+        return list(self.__courses)
+
     def __is_valid_course_title(self, course_title: str) -> bool:
         if not isinstance(course_title, str):
             return False
