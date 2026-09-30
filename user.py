@@ -12,6 +12,15 @@ class User:
             self.__surname = 'Фамилия неизвестна'
             self.__phone_number = 'Номер не указан'
 
+    def get_name(self) -> str:
+        return self.__name
+
+    def get_surname(self) -> str:
+        return self.__surname
+
+    def get_phone_number(self) -> str:
+        return self.__phone_number
+
     def __is_valid_fullname(self, name: str, surname: str) -> bool:
         if not isinstance(name, str) or not isinstance(surname, str):
             return False
