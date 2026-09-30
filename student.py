@@ -19,6 +19,10 @@ class Student(User):
     def get_courses(self) -> list[str]:
         return list(self.__courses)
 
+    def get_info(self) -> str:
+        default_info = super().get_info()
+        return f'{default_info}, Курсы: {self.get_courses()}'
+
     def __is_valid_course_title(self, course_title: str) -> bool:
         if not isinstance(course_title, str):
             return False
