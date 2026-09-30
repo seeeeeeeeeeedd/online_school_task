@@ -21,6 +21,11 @@ class User:
     def get_phone_number(self) -> str:
         return self.__phone_number
 
+    def get_info(self) -> str:
+        return (f'Имя: {self.get_name()}, '
+                f'Фамилия: {self.get_surname()}, '
+                f'Телефон: {self.get_phone_number()}')
+
     def __is_valid_fullname(self, name: str, surname: str) -> bool:
         if not isinstance(name, str) or not isinstance(surname, str):
             return False
