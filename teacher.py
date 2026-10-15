@@ -5,7 +5,7 @@ class Teacher(User):
     def __init__(self, name, surname, phone_number):
         super().__init__(name, surname, phone_number)
 
-        self.__course_materials_separator = ', '
+        self.__COURSE_MATERIALS_SEPARATOR = ', '
         self.__course_materials = []
 
     def teach(self, topic: str, student) -> tuple[bool, str]:
@@ -33,7 +33,7 @@ class Teacher(User):
         if not course_materials:
             course_materials_info = 'ничего нет'
         else:
-            course_materials_info = self.__course_materials_separator.join(course_materials)
+            course_materials_info = self.__COURSE_MATERIALS_SEPARATOR.join(course_materials)
 
         return f'{default_info}, Содержимое курсов (учебные материалы): {course_materials_info}'
 

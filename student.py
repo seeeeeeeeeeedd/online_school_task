@@ -6,7 +6,7 @@ class Student(User):
         super().__init__(name, surname, phone_number)
 
         self.__courses = []
-        self.__courses_separator = ', '
+        self.__COURSES_SEPARATOR = ', '
 
     def sign_up_for_course(self, course_title: str) -> bool:
         is_valid = self.__is_valid_course_title(course_title)
@@ -33,7 +33,7 @@ class Student(User):
         if not courses:
             courses_info = 'ничего нет'
         else:
-            courses_info = self.__courses_separator.join(courses)
+            courses_info = self.__COURSES_SEPARATOR.join(courses)
 
         return f'{default_info}, Курсы: {courses_info}'
 
