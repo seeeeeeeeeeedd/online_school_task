@@ -8,6 +8,12 @@ class Teacher(User):
         self.__course_materials_separator = ', '
         self.__course_materials = []
 
+    def teach(self, topic: str, student) -> tuple[bool, str]:
+        if not isinstance(topic, str) or not topic.strip():
+            return False, 'Тема не указана'
+
+        return True, f'Преподаватель {self.get_name()} ведёт тему "{topic}" для студента {student.get_name()}'
+
     def add_course_material(self, course_material: str) -> bool:
         is_valid = self.__is_valid_course_material(course_material)
 
