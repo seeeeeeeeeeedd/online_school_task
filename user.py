@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, name, surname, phone_number):
+    def __init__(self, name: str, surname: str, phone_number: str):
         is_valid_fullname = self.__is_valid_fullname(name, surname)
         is_valid_phone_number = self.__is_valid_phone_number(phone_number)
 
