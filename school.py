@@ -28,14 +28,14 @@ class School:
 
         return True
 
-    def find_student_by_name(self, name: str):
+    def find_student_by_name(self, name: str) -> Student | None:
         for student in self.__students:
             if student.get_name().lower() == name.lower():
                 return student
 
         return None
 
-    def find_teacher_by_name(self, name: str):
+    def find_teacher_by_name(self, name: str) -> Teacher | None:
         for teacher in self.__teachers:
             if teacher.get_name().lower() == name.lower():
                 return teacher
