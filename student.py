@@ -17,6 +17,12 @@ class Student(User):
         else:
             return False
 
+    def learn(self, topic: str, teacher) -> tuple[bool, str]:
+        if not isinstance(topic, str) or not topic.strip():
+            return False, 'Тема не указана'
+
+        return True, f'Студент {self.get_name()} изучает тему "{topic}" у преподавателя {teacher.get_name()}'
+
     def get_courses(self) -> list[str]:
         return list(self.__courses)
 
