@@ -82,6 +82,7 @@ while is_program_running:
                 teacher.add_course_material(user_course_material)
         elif user_command_number == SIGN_UP_FOR_COURSE_COMMAND:
             student = find_student()
+
             if student:
                 user_course_title = input('Укажите название курса: ').strip().capitalize()
                 student.sign_up_for_course(user_course_title)
